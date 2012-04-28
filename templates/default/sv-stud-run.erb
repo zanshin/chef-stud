@@ -1,0 +1,3 @@
+#!/bin/sh
+ulimit -n 65536
+exec /usr/local/bin/stud --ssl --write-proxy -c "TLSv1+HIGH:!SSLv2:RC4+MEDIUM:!aNULL:!eNULL:!3DES:@STRENGTH" -q -s -f "*,443" -b "127.0.0.1,4443" -k 30 -n 2 -B 1000 -u www-data /etc/ssl/private/cert_combined
